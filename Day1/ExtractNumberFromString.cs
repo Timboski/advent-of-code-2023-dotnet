@@ -7,5 +7,5 @@ public static class ExtractNumberFromString
 
     public static int FindLastNumber(this string input) => input.Last(char.IsDigit).CharToInt();
 
-    private static int CharToInt(this char c) => int.Parse(c.ToString());
+    private static int CharToInt(this char c) => c - '0';
 }
