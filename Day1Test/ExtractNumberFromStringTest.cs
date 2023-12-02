@@ -35,4 +35,23 @@ public class ExtractNumberFromStringTest
         // Assert
         Assert.Equal(expected, actual);
     }
+
+    [Theory]
+    [InlineData("two1nine", "219")]
+    [InlineData("eightwothree", "8wo3")]
+    [InlineData("abcone2threexyz", "abc123xyz")]
+    [InlineData("xtwone3four", "xtw134")]
+    [InlineData("4nineeightseven2", "49872")]
+    [InlineData("zoneight234", "zon8234")]
+    [InlineData("7pqrstsixteen", "7pqrst6teen")]
+    public void GivenStringContainingNumber_WhenParseDigitText_ReturnsExpectedNumber(string input, string expected)
+    {
+        // Arrange - see inline data
+
+        // Act
+        var actual = ExtractNumberFromString.ParseDigitText(input);
+
+        // Assert
+        Assert.Equal(expected, actual);
+    }
 }
