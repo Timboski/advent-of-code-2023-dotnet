@@ -2,5 +2,5 @@
 
 public class ExtractNumberFromString
 {
-    public static int FindFirstNumber(string input) => 0;
+    public static int FindFirstNumber(string input) => 1;
 }
