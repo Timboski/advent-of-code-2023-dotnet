@@ -1,6 +1,4 @@
-﻿
-
-namespace Day1;
+﻿namespace Day1;
 
 public static class ExtractNumberFromString
 {
