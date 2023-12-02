@@ -1,12 +1,9 @@
 ﻿
 namespace Day1;
 
-public class ExtractNumberFromString
+public static class ExtractNumberFromString
 {
-    public static int FindFirstNumber(string input) => int.Parse(input.First(char.IsDigit).ToString());
+    public static int FindFirstNumber(this string input) => int.Parse(input.First(char.IsDigit).ToString());
 
-    public static int FindLastNumber(string input)
-    {
-        throw new NotImplementedException();
-    }
+    public static int FindLastNumber(string input) => int.Parse(input.Last(char.IsDigit).ToString());
 }
