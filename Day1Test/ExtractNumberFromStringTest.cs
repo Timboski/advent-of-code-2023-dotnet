@@ -4,7 +4,7 @@ public class ExtractNumberFromStringTest
 {
     [Theory]
     [InlineData("fsfd1ljkjl3er", 1)]
-    [InlineData("1abc2", 2)]
+    [InlineData("1abc2", 1)]
     [InlineData("pqr3stu8vwx", 3)]
     [InlineData("a1b2c3d4e5f", 1)]
     [InlineData("treb7uchet", 7)]

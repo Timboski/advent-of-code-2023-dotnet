@@ -2,5 +2,5 @@
 
 public class ExtractNumberFromString
 {
-    public static int FindFirstNumber(string input) => 1;
+    public static int FindFirstNumber(string input) => int.Parse(input.First(char.IsDigit).ToString());
 }
