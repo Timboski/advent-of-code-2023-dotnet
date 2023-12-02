@@ -1,8 +1,16 @@
 ﻿
+
 namespace Day1;
 
 public static class ExtractNumberFromString
 {
+    public static int ExtractCalibration(string input)
+    {
+        int first = input.FindFirstNumber();
+        int last = input.FindLastNumber();
+        return 10*first + last;
+    }
+
     public static int FindFirstNumber(this string input) => input.First(char.IsDigit).CharToInt();
 
     public static int FindLastNumber(this string input) => input.Last(char.IsDigit).CharToInt();
