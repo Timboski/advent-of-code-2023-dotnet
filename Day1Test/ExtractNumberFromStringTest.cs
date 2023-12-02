@@ -18,4 +18,21 @@ public class ExtractNumberFromStringTest
         // Assert
         Assert.Equal(expected, actual);
     }
+
+    [Theory]
+    [InlineData("fsfd1ljkjl3er", 3)]
+    [InlineData("1abc2", 2)]
+    [InlineData("pqr3stu8vwx", 8)]
+    [InlineData("a1b2c3d4e5f", 5)]
+    [InlineData("treb7uchet", 7)]
+    public void GivenStringContainingNumber_WhenFindLastNumber_ReturnsExpectedNumber(string input, int expected)
+    {
+        // Arrange - see inline data
+
+        // Act
+        var actual = ExtractNumberFromString.FindLastNumber(input);
+
+        // Assert
+        Assert.Equal(expected, actual);
+    }
 }
