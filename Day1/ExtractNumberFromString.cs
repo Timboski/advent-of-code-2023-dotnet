@@ -1,5 +1,6 @@
 ﻿
 
+
 namespace Day1;
 
 public static class ExtractNumberFromString
@@ -49,6 +50,23 @@ public static class ExtractNumberFromString
     }
 
     public static int FindLastNumber(this string input) => input.Last(char.IsDigit).CharToInt();
+
+    public static int FindFLastNumberOrText(string input)
+    {
+        var maxIndex = -1;
+        var lastDigit = -1;
+        foreach (var digit in Digits)
+        {
+            int index = input.IndexOf(digit.Name);
+            if (index > maxIndex)
+            {
+                maxIndex = index;
+                lastDigit = digit.Value;
+            }
+        }
+
+        return lastDigit;
+    }
 
     private static int CharToInt(this char c) => c - '0';
 }

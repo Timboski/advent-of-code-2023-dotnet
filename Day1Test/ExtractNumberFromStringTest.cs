@@ -54,4 +54,23 @@ public class ExtractNumberFromStringTest
         // Assert
         Assert.Equal(expected, actual);
     }
+
+    [Theory]
+    [InlineData("two1nine", 9)]
+    [InlineData("eightwothree", 3)]
+    [InlineData("abcone2threexyz", 3)]
+    [InlineData("xtwone3four", 4)]
+    [InlineData("4nineeightseven2", 2)]
+    [InlineData("zoneight234", 4)]
+    [InlineData("7pqrstsixteen", 6)]
+    public void GivenStringContainingNumber_WhenFindLastNumberOrText_ReturnsExpectedNumber(string input, int expected)
+    {
+        // Arrange - see inline data
+
+        // Act
+        var actual = ExtractNumberFromString.FindFLastNumberOrText(input);
+
+        // Assert
+        Assert.Equal(expected, actual);
+    }
 }
