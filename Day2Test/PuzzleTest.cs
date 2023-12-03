@@ -4,7 +4,7 @@ public class PuzzleTest
 {
     [Theory]
     [InlineData("day2-example-input.txt", 8)]
-    // [InlineData("day2-input.txt", ??)]
+    [InlineData("day2-input.txt", 3035)]
     public void GivenExampleInput_WhenRun_ReturnsExampleResult(string filename, int expected)
     {
         // Arrange - see inline data
