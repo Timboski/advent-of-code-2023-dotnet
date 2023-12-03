@@ -8,10 +8,10 @@ public class Game
 
     public Game(string gameDescription)
     {
-        var game = gameDescription.Split(":");
+        var game = gameDescription.Split(": ");
         GameNumber = int.Parse(game[0].Split(" ")[1]);
 
-        _rounds = game[1].Split(";").Select(r => new Round(r)).ToList();
+        _rounds = game[1].Split("; ").Select(r => new Round(r)).ToList();
     }
 
     public int GameNumber { get; }
