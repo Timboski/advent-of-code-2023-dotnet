@@ -1,6 +1,7 @@
 ﻿
 
 
+
 namespace Day2;
 
 public class Game
@@ -18,6 +19,8 @@ public class Game
     public int GameNumber { get; }
     public int NumRounds => _rounds.Count;
 
+    public int Power => FindPower();
+
     public bool IsValid(Bag bag)
     {
         foreach (var round in _rounds)
@@ -29,5 +32,28 @@ public class Game
         }
 
         return true;
+    }
+
+    private int FindPower()
+    {
+        var maxRed = 0;
+        var maxGreen = 0;
+        var maxBlue = 0;
+
+        foreach (var round in _rounds)
+        {
+            foreach ((string colour, int count) colour in round)
+            {
+                _ = colour.colour switch
+                {
+                    "red" => maxRed = Math.Max(maxRed, colour.count),
+                    "green" => maxGreen = Math.Max(maxGreen, colour.count),
+                    "blue" => maxBlue = Math.Max(maxBlue, colour.count),
+                    _ => throw new NotImplementedException()
+                };
+            }
+        }
+
+        return maxRed * maxGreen * maxBlue;
     }
 }

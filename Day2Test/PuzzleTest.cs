@@ -15,4 +15,18 @@ public class PuzzleTest
         // Assert
         Assert.Equal(expected, actual);
     }
+
+    [Theory]
+    [InlineData("day2-example-input.txt", 2286)]
+    //[InlineData("day2-input.txt", ??)]
+    public void GivenExampleInput_WhenRunPart2_ReturnsExampleResult(string filename, int expected)
+    {
+        // Arrange - see inline data
+
+        // Act
+        var actual = Puzzle.RunPart2(filename);
+
+        // Assert
+        Assert.Equal(expected, actual);
+    }
 }
