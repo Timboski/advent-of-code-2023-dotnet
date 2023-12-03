@@ -63,6 +63,7 @@ public class ExtractNumberFromStringTest
     [InlineData("4nineeightseven2", 2)]
     [InlineData("zoneight234", 4)]
     [InlineData("7pqrstsixteen", 6)]
+    [InlineData("six7pqrstsixteen", 6)]
     public void GivenStringContainingNumber_WhenFindLastNumberOrText_ReturnsExpectedNumber(string input, int expected)
     {
         // Arrange - see inline data
