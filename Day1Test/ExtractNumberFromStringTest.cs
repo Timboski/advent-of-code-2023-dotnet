@@ -73,4 +73,23 @@ public class ExtractNumberFromStringTest
         // Assert
         Assert.Equal(expected, actual);
     }
+
+    [Theory]
+    [InlineData("two1nine", 29)]
+    [InlineData("eightwothree", 83)]
+    [InlineData("abcone2threexyz", 13)]
+    [InlineData("xtwone3four", 24)]
+    [InlineData("4nineeightseven2", 42)]
+    [InlineData("zoneight234", 14)]
+    [InlineData("7pqrstsixteen", 76)]
+    public void GivenStringContainingNumber_WhenExtractCalibrationWithText_ReturnsExpectedNumber(string input, int expected)
+    {
+        // Arrange - see inline data
+
+        // Act
+        var actual = ExtractNumberFromString.ExtractCalibrationWithText(input);
+
+        // Assert
+        Assert.Equal(expected, actual);
+    }
 }

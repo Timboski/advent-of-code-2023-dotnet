@@ -1,6 +1,7 @@
 ﻿
 
 
+
 namespace Day1;
 
 public static class ExtractNumberFromString
@@ -30,9 +31,11 @@ public static class ExtractNumberFromString
 
     public static int ExtractCalibration(string input) => 10 * input.FindFirstNumber() + input.FindLastNumber();
 
+    public static int ExtractCalibrationWithText(string input) => 10 * input.FindFirstNumberOrText() + input.FindFLastNumberOrText();
+
     public static int FindFirstNumber(this string input) => input.First(char.IsDigit).CharToInt();
 
-    public static int FindFirstNumberOrText(string input)
+    public static int FindFirstNumberOrText(this string input)
     {
         var minIndex = int.MaxValue;
         var firstDigit = -1;
@@ -51,7 +54,7 @@ public static class ExtractNumberFromString
 
     public static int FindLastNumber(this string input) => input.Last(char.IsDigit).CharToInt();
 
-    public static int FindFLastNumberOrText(string input)
+    public static int FindFLastNumberOrText(this string input)
     {
         var maxIndex = -1;
         var lastDigit = -1;
