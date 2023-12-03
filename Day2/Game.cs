@@ -1,5 +1,6 @@
 ﻿
 
+
 namespace Day2;
 
 public class Game
@@ -16,4 +17,17 @@ public class Game
 
     public int GameNumber { get; }
     public int NumRounds => _rounds.Count;
+
+    public bool IsValid(Bag bag)
+    {
+        foreach (var round in _rounds)
+        {
+            foreach ((string colour, int count) colour in round)
+            {
+                if (!bag.IsValid(colour.colour, colour.count)) return false;
+            }
+        }
+
+        return true;
+    }
 }

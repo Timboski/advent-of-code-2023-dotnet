@@ -1,6 +1,8 @@
-﻿namespace Day2;
+﻿using System.Collections;
 
-public class Round
+namespace Day2;
+
+public class Round : IEnumerable
 {
     private readonly (string colour, int count)[] _cubes;
 
@@ -10,6 +12,8 @@ public class Round
     }
 
     public (string colour, int count) this[int i] => _cubes[i];
+
+    public IEnumerator GetEnumerator() => _cubes.GetEnumerator();
 
     private (string colour, int count) ParseCube(string content)
     {
