@@ -60,7 +60,7 @@ public static class ExtractNumberFromString
         var lastDigit = -1;
         foreach (var digit in Digits)
         {
-            int index = input.IndexOf(digit.Name);
+            int index = input.LastIndexOf(digit.Name);
             if (index > maxIndex)
             {
                 maxIndex = index;
